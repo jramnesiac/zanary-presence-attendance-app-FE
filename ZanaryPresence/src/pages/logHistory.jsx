@@ -9,7 +9,7 @@ export const LogHistory = () => {
 
     const logHistory = async () => {
         try {
-            const response = await Axios.get("http://localhost:3006/api/attendance/loghistory", {
+            const response = await Axios.get("http://localhost:/api/attendance/loghistory", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

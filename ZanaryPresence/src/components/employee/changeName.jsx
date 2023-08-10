@@ -8,7 +8,7 @@ export const ChangeName = () => {
       <Text fontSize="20px" fontWeight="bold" color="blue.700">Change Name</Text>
       <Box mt="15px">
         <Formik
-          initialValues={{ firstName: '', lastName: '' }}
+          initialValues={{ fullname: '' }}
           onSubmit={(values) => {
             // Handle name change logic here
           }}
@@ -16,8 +16,7 @@ export const ChangeName = () => {
           {(props) => (
             <Form>
               <Flex alignItems="center">
-                <InputField name="firstName" type="text" id="firstName" className="firstName" placeholder="First Name" borderColor="blue.300" />
-                <InputField name="lastName" type="text" id="lastName" className="lastName" placeholder="Last Name" borderColor="blue.300" />
+                <InputField name="fullname" type="text" id="fullname" className="fullname" placeholder="fullname" borderColor="blue.300" />
                 <Button type="submit" colorScheme="teal" ml="10px">Change</Button>
               </Flex>
             </Form>

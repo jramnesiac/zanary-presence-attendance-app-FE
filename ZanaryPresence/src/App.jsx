@@ -26,25 +26,33 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  const token = localStorage.getItem("token")
-  const dispatch = useDispatch()
-  
-  const keepLogin = async () => {
-    try {
-      const response = await Axios.get("http://localhost:3006/api/auth/", {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      dispatch(setValue(response.data))
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    keepLogin()
-  }, [])
+    const token = localStorage.getItem("token");
+    console.log(token);
+
+    const session = async () => {
+      if (token) {
+        try {
+          const res = await Axios.get(
+            "http://localhost:3006/api/auth/",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          dispatch(setValue(res.data));
+          console.log(res.data);
+        } catch (error) {
+          console.error("Error fetching session:", error);
+        }
+      }
+    };
+
+    session();
+  }, []);
   return (
     <div className="App">
       <RouterProvider router={router} />

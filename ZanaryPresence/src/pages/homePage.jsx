@@ -7,7 +7,7 @@ export const HomePage = () => {
     return (
         <Flex bg="#f0f8ff" minH="100vh" direction={{ base: "column", md: "row" }}>
             <Sidebar />
-            <Box flex="1" display={{ base: "none", md: "block" }} ml={{ md: "5px", lg: "10px" }}>
+            <Box flex="1" display={{ base: "none"}} ml={{ md: "5px", lg: "10px" }}>
                 <MobileNav />
             </Box>
             <Box

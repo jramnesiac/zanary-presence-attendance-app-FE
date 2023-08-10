@@ -48,7 +48,7 @@ export const LogCard = () => {
 
       const clockOut = async () => {
         try {
-            await Axios.post("http://localhost:9000/api/attendance/clockout", {}, {
+            await Axios.post("http://localhost:3006/api/attendance/clockout", {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -78,14 +78,14 @@ export const LogCard = () => {
 
       const clockInOT = async (data) => {
         try {
-            await Axios.post("http://localhost:9000/api/overtime", {}, {
+            await Axios.post("http://localhost:3006/api/overtime", {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
             toast({
                 title: "Clock In Success!",
-                description: "You have clocked in for OT!",
+                description: "You have clocked in for Overtime!",
                 status: "success",
                 duration: 2000,
                 isClosable: true,
@@ -108,7 +108,7 @@ export const LogCard = () => {
 
       const clockOutOT = async () => {
         try {
-            await Axios.patch("http://localhost:9000/api/overtime", {}, {
+            await Axios.patch("http://localhost:3006/api/overtime", {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

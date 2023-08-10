@@ -49,7 +49,7 @@ export const ChangePic = ({ image }) => {
     <Flex direction="column" bg="blue.50" p="20px" borderRadius="10px" boxShadow="md" mt="30px">
       <Text fontSize="20px" fontWeight="bold" color="blue.700">Profile Picture</Text>
       <Flex mt="15px" direction={{ base: "column", md: "row" }} alignItems={{ base: "center", md: "flex-start" }}>
-        <Avatar size={{ base: "lg", md: "xl" }} src={`http://localhost:9000/${image}`} mb={{ base: "10px", md: "0px"}} />
+        <Avatar size={{ base: "lg", md: "xl" }} src={`http://localhost:3006/${image}`} mb={{ base: "10px", md: "0px"}} />
         <Box>
           <Formik
             initialValues={initialValues}
